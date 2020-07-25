@@ -123,8 +123,12 @@ a:hover {
   max-width: 110vh;
 }
 
-.table{
+.table {
   margin-top: 8%;
-  
+
   width: 80%;
+}
+
+#panel {
+  display: none;
 }

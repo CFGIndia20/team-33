@@ -55,21 +55,31 @@
                 <li class="nav-item">
                   <a
                     href="index.html"
-                    class="nav-link text-white sidebar-link p-3 mb-2"
+                    class="nav-link text-white p-3 mb-2 sidebar-link"
                     ><i class="fas fa-home text-light fa-lg mr-3"></i
                     >Dashboard</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link text-white p-3 mb-2 sidebar-link"
+                  <a
+                    href="session.html"
+                    class="nav-link text-white p-3 mb-2 sidebar-link"
                     ><i class="fas fa-users text-light fa-lg mr-3"></i
                     >Sessions</a
                   >
                 </li>
                 <li class="nav-item">
                   <a
+                    href="attendance.html"
+                    class="nav-link text-white p-3 mb-2 sidebar-link"
+                    ><i class="fas fa-users text-light fa-lg mr-3"></i
+                    >Attendance</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
                     href="tasks.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link current"
+                    class="nav-link text-white p-3 mb-2 current"
                     ><i class="fas fa-tasks text-light fa-lg mr-3"></i>Tasks</a
                   >
                 </li>
@@ -87,12 +97,6 @@
                     class="nav-link text-white p-3 mb-2 sidebar-link"
                     ><i class="fas fa-money-bill-wave text-light fa-lg mr-3"></i
                     >Compensation</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link text-white p-3 mb-2 sidebar-link"
-                    ><i class="fas fa-chart-bar text-light fa-lg mr-3"></i
-                    >Reports</a
                   >
                 </li>
               </ul>
@@ -252,6 +256,33 @@
                     </div>
                   </div>
                 </div>
+
+                <div id="panel">
+                  <div class="container-fluid bg-white">
+                    <div class="row py-3 mb-4 task-border">
+                      <div class="col-1">
+                        <input type="checkbox" name="" value="" />
+                      </div>
+                      <div class="col-sm-9 col-8">
+                        Task 5
+                      </div>
+                      <div class="col-1">
+                        <span data-toggle="modal" data-target="#editModal1">
+                          <a href="#" data-toggle="tooltip" title="Edit"
+                            ><i class="fas fa-edit fa-lg text-success mr-2"></i
+                          ></a>
+                        </span>
+                      </div>
+                      <div class="col-1">
+                        <span data-toggle="modal" data-target="#leave">
+                          <a href="#" data-toggle="tooltip" title="Delete"
+                            ><i class="fas fa-trash-alt fa-lg text-danger"></i
+                          ></a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -341,7 +372,11 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-primary" data-dismiss="modal">
+            <button
+              class="btn btn-primary"
+              data-dismiss="modal"
+              onclick="myFunction()"
+            >
               Save Changes
             </button>
           </div>
@@ -519,6 +554,7 @@
               name="button"
               class="btn btn-danger"
               data-dismiss="modal"
+              onclick="newFunction()"
             >
               Delete
             </button>
@@ -574,8 +610,15 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
-    <script src="script.js">
+    <script src="script.js"></script>
+    <script>
       CKEDITOR.replace("editor1");
+      function myFunction() {
+        document.getElementById("panel").style.display = "block";
+      }
+      function newFunction() {
+        document.getElementById("panel").style.display = "none";
+      }
     </script>
   </body>
 </html>
