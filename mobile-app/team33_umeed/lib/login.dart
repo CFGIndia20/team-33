@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
           email: emailController.text, password: passwordController.text);
       print(authResult);
 
-      // Navigator.of(context).pushReplacementNamed('');
+      Navigator.of(context).pushReplacementNamed('/home');
     } on PlatformException catch (err) {
       var message = 'An error occurred, pelase check your credentials!';
 
@@ -50,7 +50,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
-      body: _isLoading
+      body: _isLoading == false
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -168,7 +168,7 @@ class _LoginState extends State<Login> {
                 )
               ],
             )
-          : CircularProgressIndicator(),
+          : Center(child: CircularProgressIndicator()),
     );
   }
 }
