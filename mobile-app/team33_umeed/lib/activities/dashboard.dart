@@ -7,25 +7,45 @@ class Dashboard extends StatefulWidget{
 
 class DashboardState extends State<Dashboard>{
     Widget _container(){
-      var container = Container(
+        var cont =Container(
+        color: Colors.white30,
+        child: Column(
+          children:[
+
+          Container(
             margin: const EdgeInsets.all(10.0),
-            width: 100.0,
+            width: 400.0,
             height: 100.0,
             decoration: new BoxDecoration(
                         color: Colors.pink[900],
                         borderRadius: BorderRadius.circular(20),
                     ),
-              
-          );
-        
-        var cont =Container(
-        color: Colors.white30,
-        child: Column(
-          children:[
-          container,
-          container,
-          container,
-          ]
+            child: Image.asset('images/user.jpg')),
+
+          Container(
+            child: Image.asset('images/user.jpg'),
+            margin: const EdgeInsets.all(10.0),
+            width: 400.0,
+            height: 100.0,
+            decoration: new BoxDecoration(
+                        color: Colors.pink[900],
+                        borderRadius: BorderRadius.circular(20),
+                    ),
+            
+            
+            ),
+
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              width: 400.0, 
+              height: 100.0, 
+              decoration: new BoxDecoration(  
+                          color: Colors.pink[900], 
+                          borderRadius: BorderRadius.circular(20),  
+                      ),  
+              child: Image.asset('images/user.jpg'))
+            ,
+]
         ),
         ); 
         return
