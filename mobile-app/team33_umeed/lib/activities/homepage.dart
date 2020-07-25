@@ -116,7 +116,8 @@ class HomeState extends State<HomeActivity> {
                             itemBuilder: (context, index) {
 
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: 20.0),
+                                margin: const EdgeInsets.all(10.0),
+                                //margin: EdgeInsets.symmetric(horizontal: 20.0),
                                 elevation: 1.5,
                                 child: ListTile(
                                   onTap: () {
