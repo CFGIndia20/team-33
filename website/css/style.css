@@ -110,5 +110,21 @@ a:hover {
 
 /* Tasks */
 .task-border {
-  border-left: 3px solid #f66436;
+  border-left: 3px solid #b00574;
+}
+
+.btn-tasks {
+  background: #b00574;
+}
+
+.yo {
+  padding-left: 30%;
+  margin-bottom: 20px;
+  max-width: 110vh;
+}
+
+.table{
+  margin-top: 8%;
+  margin-left: 18%;
+  width: 80%;
 }
