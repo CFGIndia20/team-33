@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "691086175931",
+    "firebase_url": "https://team33-app.firebaseio.com",
+    "project_id": "team33-app",
+    "storage_bucket": "team33-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691086175931:android:4fbdad1db40a3f635e439e",
+        "android_client_info": {
+          "package_name": "com.example.team33_umeed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691086175931-1em5n1qigira76kaeneknt4ipti2f9ie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": ""
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691086175931-1em5n1qigira76kaeneknt4ipti2f9ie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
