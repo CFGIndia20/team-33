@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+ *{
+     margin:0;
+     padding:0;
+     user-select: none;
+ }
+ body{
+     background: #e9eaea;
+     font-family: 'Roboto', sans-serif;
+ }
+ .container{
+    width: 450px;
+    margin: 30px auto;
+  }
+  
+  .signup,
+  .login{
+    width: 50%;
+    background: #fff;
+    float: left;
+    height: 60px;
+     line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase; 
+  }
+  .signup-form,
+.login-form{
+  background: #fff;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  /* height: 800px; */
+}
+
+.input{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border: 2px solid #e9eaea;
+  color: #3e3e40;
+  font-size: 14px;
+  outline: none;
+  transform: all 0.5s ease;
+}
+
+.input:focus{
+  border: 2px solid #bae8e8;
+}
+
+.btnn{
+  width: 100%;
+  background: #bae8e8;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  border: none;
+}
+span a{
+  text-decoration: none;
+  color: #000;
+}
+.btnn:hover
+{
+  /* background: #bae8e8; */
+  /* filter: brightness(1,1); */
+  box-shadow: #7c9b9b;
+}
+  

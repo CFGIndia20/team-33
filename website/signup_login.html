@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup/Login</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style1.css">
+
+
+</head>
+
+<body>
+    <div class="container ">
+
+        <div class="signup">Sign Up</div>
+        <div class="login">Log In</div>
+        <div class="signup-form shadow">
+            <form onsubmit="return validateForm()" action="signuplogin.php" name="myForm" method="POST">
+                <div class="first_box">
+                    <input type="text" placeholder="Your Email Address" name="email" id="email" class="input" value=""
+                        required><br />
+                </div>
+
+                <div class="first_box">
+                    <input type="text" name="user" placeholder="Choose a Username" value="" class="input"
+                        required><br />
+                </div>
+                <div class="first_box">
+                    <input type="password" placeholder="Choose a Password" id="pass" name="password" value=""
+                        class="input" required><br />
+                </div>
+                <div class="first_box">
+                    <input type="password" placeholder="Choose a Password" id="cpass" name="cpassword" value=""
+                        class="input" required><br />
+                </div>
+                <div class="first_box">
+                    <input type="submit" name="sub" id="otp_btn" class="btnn" value="Verify OTP">
+
+                    <small class="text-muted" id="msg">Check your email and enter the OTP </small>
+                </div>
+
+            </form>
+
+            <form action="registration.php" method="POST">
+                <div class="second_box mt-2">
+                    <input type="text" name="votp" placeholder="Enter OTP" class="input" required><br />
+                </div>
+                <div class="second_box">
+                    <input type="submit" name="submit" class="btnn" value="Create account">
+                </div>
+            </form>
+        </div>
+
+        <div class="login-form shadow">
+            <form action="validation.php" method="POST">
+                <input type="text" placeholder="Email or Username" name="user" id="lu" class="input" required><br />
+                <input type="password" placeholder="Password" name="password" id="lp" class="input" required><br />
+                <input type="submit" class="btnn" value="log in">
+
+                <p id="msg"></p>
+
+                <span><button type="button" id="passr" name="forgot" style="padding:0;border:none;background:none;">I
+                        forgot my username or password.</button></span>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+
+
+        function send_otp() {
+            // $("#passr").click(function(){
+            var lname = $('#lu').val();
+
+            $.ajax({
+                url: 'forgotpass.php',
+                type: 'post',
+                data: 'lname=' + lname,
+                success: function (result) {
+                    $('#msg').text(result);
+                }
+            });
+        };
+
+    </script>
+    <script>
+
+
+        $(document).ready(function () {
+            $(".login-form").hide();
+            $(".login").css("background", "none");
+
+            $(".login").click(function () {
+                $(".signup-form").hide();
+                $(".login-form").show();
+                $(".signup").css("background", "none");
+                $(".login").css("background", "#fff");
+
+            })
+
+            $(".signup").click(function () {
+                $(".signup-form").show();
+                $(".login-form").hide();
+                $(".signup").css("background", "#fff");
+                $(".login").css("background", "none");
+
+            });
+
+        });
+    </script>
+
+    <script>
+        function validateForm() {
+            var pass = document.forms["myForm"]["password"].value;
+            var cpass = document.forms["myForm"]["cpassword"].value;
+            if (pass.length < 6) {
+                alert("Length should be greater than 6");
+                document.getElementById("pass").value = "";
+                return false;
+            }
+            if (pass != cpass) {
+                alert("Password and Confirm Password does not match");
+                document.getElementById("pass").value = "";
+                document.getElementById("cpass").value = "";
+                return false;
+            }
+
+        } 
+    </script>
+
+    <style>
+        /* #msg{display:none;} */
+    </style>
+
+
+</body>
+
+</html>
