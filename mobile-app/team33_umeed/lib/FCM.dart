@@ -18,13 +18,36 @@ class _FCMState extends State<FCM> {
         onMessage: (Map<String, dynamic> msg) async {
           print('Log: Notification onMessage: $msg');
           try {
-            Scaffold.of(context).showSnackBar(SnackBar(
-              content: Text('msg'),
-              action: SnackBarAction(
-                label: 'Yes',
-                onPressed: () {},
-              ),
-            ));
+            Scaffold.of(context).showBottomSheet((BuildContext context) {
+              return Container(
+                height: 200,
+                color: Colors.white,
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      const Text('Do you want to attend the session?'),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          RaisedButton(
+                            child: const Text('No'),
+                            color: Colors.white,
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                          RaisedButton(
+                            child: const Text('Yes'),
+                            color: Colors.purple,
+                            onPressed: () => Navigator.pop(context),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            });
           } catch (err) {
             print('Unable to open snackbar: $err');
           }
