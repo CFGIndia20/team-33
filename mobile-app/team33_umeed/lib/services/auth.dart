@@ -14,7 +14,9 @@ class AuthService {
     return user != null ? AuthUser(uId: user.uid) : null;
   }
 
-  Future<void> createUser(String email, String password) async {
+  Future<AuthResult> createUser(String email, String password) async {
+    print("akash");
+    print(email);
     return await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
   }
@@ -24,7 +26,7 @@ class AuthService {
   }
 
   Stream<User> currentUser(String uId) {
-    return DatabaseService(uId: uId).getUser();
+    return Database(uId: uId).getUser();
   }
 
   Future<void> signOut() {
