@@ -24,10 +24,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/tasks.js"></script>
     <title>Admin Dashboard</title>
   </head>
 
-  <body>
+  <body onload=tasks()>
     <nav class="navbar navbar-expand-sm navbar-light">
       <button
         class="navbar-toggler ml-auto mb-2 bg-light"
@@ -160,12 +161,13 @@
                     <i class="fas fa-plus"></i> Add Task
                   </a>
                 </div>
+
                 <div class="container-fluid bg-white">
                   <div class="row py-3 mb-4 task-border">
                     <div class="col-1">
                       <input type="checkbox" name="" value="" />
                     </div>
-                    <div class="col-sm-9 col-8">
+                    <div class="col-sm-9 col-8" name="taskname">
                       Task 1
                     </div>
                     <div class="col-1">
@@ -184,78 +186,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="container-fluid bg-white">
-                  <div class="row py-3 mb-4 task-border">
-                    <div class="col-1">
-                      <input type="checkbox" name="" value="" />
-                    </div>
-                    <div class="col-sm-9 col-8">
-                      Task 2
-                    </div>
-                    <div class="col-1">
-                      <span data-toggle="modal" data-target="#editModal2">
-                        <a href="#" data-toggle="tooltip" title="Edit"
-                          ><i class="fas fa-edit fa-lg text-success mr-2"></i
-                        ></a>
-                      </span>
-                    </div>
-                    <div class="col-1">
-                      <span data-toggle="modal" data-target="#leave">
-                        <a href="#" data-toggle="tooltip" title="Delete"
-                          ><i class="fas fa-trash-alt fa-lg text-danger"></i
-                        ></a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="container-fluid bg-white">
-                  <div class="row py-3 mb-4 task-border">
-                    <div class="col-1">
-                      <input type="checkbox" name="" value="" />
-                    </div>
-                    <div class="col-sm-9 col-8">
-                      Task 3
-                    </div>
-                    <div class="col-1">
-                      <span data-toggle="modal" data-target="#editModal1">
-                        <a href="#" data-toggle="tooltip" title="Edit"
-                          ><i class="fas fa-edit fa-lg text-success mr-2"></i
-                        ></a>
-                      </span>
-                    </div>
-                    <div class="col-1">
-                      <span data-toggle="modal" data-target="#leave">
-                        <a href="#" data-toggle="tooltip" title="Delete"
-                          ><i class="fas fa-trash-alt fa-lg text-danger"></i
-                        ></a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="container-fluid bg-white">
-                  <div class="row py-3 mb-4 task-border">
-                    <div class="col-1">
-                      <input type="checkbox" name="" value="" />
-                    </div>
-                    <div class="col-sm-9 col-8">
-                      Task 4
-                    </div>
-                    <div class="col-1">
-                      <span data-toggle="modal" data-target="#editModal1">
-                        <a href="#" data-toggle="tooltip" title="Edit"
-                          ><i class="fas fa-edit fa-lg text-success mr-2"></i
-                        ></a>
-                      </span>
-                    </div>
-                    <div class="col-1">
-                      <span data-toggle="modal" data-target="#leave">
-                        <a href="#" data-toggle="tooltip" title="Delete"
-                          ><i class="fas fa-trash-alt fa-lg text-danger"></i
-                        ></a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                
 
                 <div id="panel">
                   <div class="container-fluid bg-white">
