@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:team33_umeed/login.dart';
 
 import 'signup.dart';
+import 'activities/homepage.dart';
 
 void main() => runApp(new MyApp());
 
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        '/signup': (BuildContext context) => new SignupPage()
+        '/signup': (BuildContext context) => new SignupPage(),
+        '/home': (BuildContext context) => new HomeActivity()
       },
       home: new MyHomePage(),
     );
