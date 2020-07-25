@@ -12,10 +12,11 @@
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/Attendence.js"></script>
     <title>Admin Dashboard</title>
 </head>
 
-<body>
+<body onload=myAttendence()>
     <nav class="navbar navbar-expand-sm navbar-light">
         <button class="navbar-toggler ml-auto mb-2 bg-light" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -137,7 +138,7 @@
                 <th class="th-sm">Homework</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="attendenceBody">
             <tr>
                 <td>1</td>
                 <td>ABC</td>
