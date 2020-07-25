@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team33_umeed/FCM.dart';
 import 'package:team33_umeed/services/auth.dart';
 import 'package:team33_umeed/services/database.dart';
 import 'package:provider/provider.dart';
@@ -12,30 +13,6 @@ class HomeActivity extends StatefulWidget {
 }
 
 class HomeState extends State<HomeActivity> {
-  Widget _container() {
-    var container = Container(
-      margin: const EdgeInsets.all(10.0),
-      color: Colors.pink[900],
-      width: 100.0,
-      height: 100.0,
-    );
-    return Container(
-      color: Colors.white30,
-      child: GridView.count(
-          crossAxisCount: 2,
-          childAspectRatio: 1.0,
-          padding: const EdgeInsets.all(2.0),
-          mainAxisSpacing: 2.0,
-          crossAxisSpacing: 2.0,
-          children: [
-            container,
-            container,
-            container,
-            container,
-          ]),
-    );
-  }
-
   Widget build(BuildContext context) {
     AuthUser authUser = Provider.of<AuthUser>(context);
     print(authUser.uId);
@@ -133,6 +110,8 @@ class HomeState extends State<HomeActivity> {
               //   },
               //   child: Text("logout"),
               // ),
+              FCM(),
+
               Stack(
                 children: <Widget>[
                   Container(
@@ -208,31 +187,32 @@ class HomeState extends State<HomeActivity> {
                         ? ListView.builder(
                             itemBuilder: (context, index) {
                               return Card(
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 25),
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 25, vertical: 8),
                                 //margin: EdgeInsets.symmetric(horizontal: 20.0),
                                 elevation: 1.5,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: ListTile(
-                                    onTap: () {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(builder: (context) {
-                                        return UploadImage(
-                                            taskId: snapshot.data[index].id);
-                                      }));
-                                    },
-                                    leading: CircleAvatar(
-                                      backgroundColor: Colors.purple[500],
-                                      foregroundColor: Colors.white,
-                                      child: Text("#1"),
-                                    ),
-                                    title:
-                                        Text(snapshot.data[index].description),
-                                    subtitle: Text("date"),
-                                    trailing: Icon(
-                                      Icons.arrow_forward,
-                                    ),
+                                child: ListTile(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (context) {
+                                      return UploadImage(
+                                          taskId: snapshot.data[index].id);
+                                    }));
+                                  },
+                                  leading: CircleAvatar(
+                                    backgroundColor: Colors.purple[500],
+                                    foregroundColor: Colors.white,
+                                    child: Text('#' +
+                                        snapshot.data[index].quantity
+                                            .toString()),
+                                  ),
+                                  title: Text(snapshot.data[index].name),
+                                  subtitle: Text(
+                                      snapshot.data[index].start.toString() +
+                                          '-' +
+                                          snapshot.data[index].end.toString()),
+                                  trailing: Icon(
+                                    Icons.arrow_forward,
                                   ),
                                 ),
                               );

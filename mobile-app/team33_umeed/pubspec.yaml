@@ -33,6 +33,7 @@ dependencies:
   image_picker: 0.6.7+4
   firebase_storage: 3.1.6
   provider:
+  firebase_messaging:
 
 dev_dependencies:
   flutter_test:

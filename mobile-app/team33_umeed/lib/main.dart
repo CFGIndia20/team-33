@@ -10,6 +10,8 @@ import 'package:team33_umeed/models/user.dart';
 import 'services/auth.dart';
 import './screens/auth/auth.dart';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
+
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -43,6 +45,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final FirebaseMessaging _fcm = FirebaseMessaging();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _fcm.configure(
+      onMessage: (Map<String, dynamic> msg) async {
+        print('Log: Notification onMessage: $msg');
+        final snackBar = SnackBar(
+          content: Text(msg['title']),
+          action: SnackBarAction(
+            label: 'Yes',
+            onPressed: () {},
+          ),
+        );
+        try {
+          Scaffold.of(context).showSnackBar(snackBar);
+        } catch (err) {
+          print('Unable to open snackbar: $err');
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     AuthUser authUser = Provider.of<AuthUser>(context);
