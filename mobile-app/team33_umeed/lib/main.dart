@@ -45,6 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     AuthUser authUser = Provider.of<AuthUser>(context);
-    return authUser == null ? Auth() : HomeActivity();
+    return authUser == null ? Auth() : Wrapper();
   }
 }
