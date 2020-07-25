@@ -3,6 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 
 class Login extends StatefulWidget {
+  final Function changeAuth;
+
+  Login({this.changeAuth});
+
   @override
   _LoginState createState() => _LoginState();
 }
@@ -153,7 +157,7 @@ class _LoginState extends State<Login> {
                   children: <Widget>[
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed('/signup');
+                        widget.changeAuth();
                       },
                       child: Text(
                         'Register',
