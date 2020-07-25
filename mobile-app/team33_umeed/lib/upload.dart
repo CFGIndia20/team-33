@@ -64,11 +64,19 @@ class _UploadImageState extends State<UploadImage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+       appBar: AppBar(
+          title: Text('Upload Image'),
+        ),
       body: Container(
         child: isFileUploaded
-            ? Center(
-                child: Text('Done!'),
-              )
+            ?  Center(
+                  child: RaisedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text('Done! Go back!'),
+                  ),
+                )
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,

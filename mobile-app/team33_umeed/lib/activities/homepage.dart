@@ -42,25 +42,66 @@ class HomeState extends State<HomeActivity> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Umeed'),
+          actions: <Widget>[
+            IconButton(icon: Icon(Icons.exit_to_app), onPressed: () async {
+                  await AuthService().signOut();
+                },
+                )
+          ],
         ),
+        drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('Drawer Header'),
+              decoration: BoxDecoration(
+                color: Colors.purple[600],
+              ),
+            ),
+            ListTile(
+              title: Text('Item 1'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Item 2'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
         body: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              RaisedButton(
-                onPressed: () async {
-                  await AuthService().signOut();
-                },
-                child: Text("logout"),
-              ),
+              
               // RaisedButton(
               //   onPressed: () {
               //     Navigator.of(context).pushNamed('/tasks');
               //   },
               //   child: Text("tasks"),
               // ),
-
+              //  RaisedButton(
+              //   onPressed: () async {
+              //     await AuthService().signOut();
+              //   },
+              //   child: Text("logout"),
+              // ),
               Expanded(
                 child: StreamBuilder<List<Task>>(
                   builder: (context, snapshot) {
@@ -68,10 +109,12 @@ class HomeState extends State<HomeActivity> {
                       //print(snapshot.data.length);
                       print(snapshot.data.length);
                     }
+                    
                     return snapshot.data != null
                         ? ListView.builder(
                             itemBuilder: (context, index) {
                               return ListTile(
+                                contentPadding: const EdgeInsets.all(10.0),
                                 onTap: () {
                                   Navigator.of(context).push(
                                       MaterialPageRoute(builder: (context) {
@@ -84,6 +127,7 @@ class HomeState extends State<HomeActivity> {
                                 ),
                                 title: Text(snapshot.data[index].description),
                                 subtitle: Text("date"),
+                                
                               );
                             },
                             itemCount: snapshot.data.length,
