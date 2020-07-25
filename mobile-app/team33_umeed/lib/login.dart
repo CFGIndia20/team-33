@@ -3,6 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 
 class Login extends StatefulWidget {
+  final Function changeAuth;
+
+  Login({this.changeAuth});
+
   @override
   _LoginState createState() => _LoginState();
 }
@@ -27,7 +31,7 @@ class _LoginState extends State<Login> {
           email: emailController.text, password: passwordController.text);
       print(authResult);
 
-      Navigator.of(context).pushReplacementNamed('/home');
+      Navigator.of(context).pushReplacementNamed('/login');
     } on PlatformException catch (err) {
       var message = 'An error occurred, pelase check your credentials!';
 
@@ -153,7 +157,7 @@ class _LoginState extends State<Login> {
                   children: <Widget>[
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed('/signup');
+                        widget.changeAuth();
                       },
                       child: Text(
                         'Register',

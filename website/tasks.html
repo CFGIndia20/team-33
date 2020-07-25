@@ -53,21 +53,21 @@
 
               <ul class="navbar-nav flex-column mt-4">
                 <li class="nav-item">
-                  <a href="" class="nav-link text-white p-3 mb-2 current"
+                  <a href="index.html" class="nav-link text-white p-3 mb-2"
                     ><i class="fas fa-home text-light fa-lg mr-3"></i
                     >Dashboard</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link text-white p-3 mb-2 sidebar-link"
+                  <a href="session.html" class="nav-link text-white p-3 mb-2 sidebar-link"
                     ><i class="fas fa-users text-light fa-lg mr-3"></i
-                    >Sessions</a
+                    >Session</a
                   >
                 </li>
                 <li class="nav-item">
                   <a
                     href="tasks.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
+                    class="nav-link text-white p-3 mb-2 sidebar-link current"
                     ><i class="fas fa-tasks text-light fa-lg mr-3"></i>Tasks</a
                   >
                 </li>
@@ -93,7 +93,7 @@
             >
               <div class="row align-items-center">
                 <div class="col-md-4">
-                  <h4 class="text-light text-uppercase mb-0">Dashboard</h4>
+                  <h4 class="text-light text-uppercase mb-0">Tasks</h4>
                 </div>
                 <div class="col-md-5">
                   <form class="" action="index.html" method="post">
@@ -170,77 +170,102 @@
       </div>
     </div>
 
-    <!-- Cards -->
+    <!-- Tasks -->
     <section>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-xl-10 col-md-8 col-lg-9 ml-auto">
-            <div class="row pt-md-5 mt-md-3 mb-5">
-              <div class="col-xl-3 col-sm-6 p-2">
-                <div class="card card-common">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <i class="fas fa-shopping-cart fa-3x text-warning"></i>
-                      <div class="text-right text-secondary">
-                        <h5>Sales</h5>
-                        <h3>₹125,000</h3>
-                      </div>
+          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+            <div class="row mb-4 align-items-center">
+              <div class="col-12">
+                <h4 class="p-3 mb-3 text-muted">Tasks</h4>
+                <div class="yo">
+                  <a
+                    href="#"
+                    class="btn btn-tasks text-white btn-block"
+                    data-toggle="modal"
+                    data-target="#addPostModal"
+                  >
+                    <i class="fas fa-plus"></i> Add Task
+                  </a>
+                </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border">
+                    <div class="col-1">
+                      <input type="checkbox" name="" value="" />
                     </div>
-                  </div>
-                  <div class="card-footer text-secondary">
-                    <i class="fas fa-sync mr-3"> </i>
-                    <span>Updated now</span>
+                    <div class="col-sm-9 col-8">
+                      Task 1
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="Edit"
+                        ><i class="fas fa-edit fa-lg text-success mr-2"></i
+                      ></a>
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="Delete"
+                        ><i class="fas fa-trash-alt fa-lg text-danger"></i
+                      ></a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 p-2">
-                <div class="card card-common">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <i class="fas fa-money-bill-alt fa-3x text-success"></i>
-                      <div class="text-right text-secondary">
-                        <h5>Expenses</h5>
-                        <h3>₹25,000</h3>
-                      </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border">
+                    <div class="col-1">
+                      <input type="checkbox" name="" value="" />
                     </div>
-                  </div>
-                  <div class="card-footer text-secondary">
-                    <i class="fas fa-sync mr-3"> </i>
-                    <span>Updated now</span>
+                    <div class="col-sm-9 col-8">
+                      Task 2
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="Edit"
+                        ><i class="fas fa-edit fa-lg text-success mr-2"></i
+                      ></a>
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="Delete"
+                        ><i class="fas fa-trash-alt fa-lg text-danger"></i
+                      ></a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 p-2">
-                <div class="card card-common">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <i class="fas fa-users fa-3x text-info"></i>
-                      <div class="text-right text-secondary">
-                        <h5>Users</h5>
-                        <h3>15,000</h3>
-                      </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border">
+                    <div class="col-1">
+                      <input type="checkbox" name="" value="" />
                     </div>
-                  </div>
-                  <div class="card-footer text-secondary">
-                    <i class="fas fa-sync mr-3"> </i>
-                    <span>Updated now</span>
+                    <div class="col-sm-9 col-8">
+                      Task 3
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="Edit"
+                        ><i class="fas fa-edit fa-lg text-success mr-2"></i
+                      ></a>
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="Delete"
+                        ><i class="fas fa-trash-alt fa-lg text-danger"></i
+                      ></a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 p-2">
-                <div class="card card-common">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <i class="fas fa-chart-line fa-3x text-danger"></i>
-                      <div class="text-right text-secondary">
-                        <h5>Visitors</h5>
-                        <h3>45,000</h3>
-                      </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border">
+                    <div class="col-1">
+                      <input type="checkbox" name="" value="" />
                     </div>
-                  </div>
-                  <div class="card-footer text-secondary">
-                    <i class="fas fa-sync mr-3"> </i>
-                    <span>Updated now</span>
+                    <div class="col-sm-9 col-8">
+                      Task 4
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="Edit"
+                        ><i class="fas fa-edit fa-lg text-success mr-2"></i
+                      ></a>
+                    </div>
+                    <div class="col-1">
+                      <a href="#" data-toggle="tooltip" title="Delete"
+                        ><i class="fas fa-trash-alt fa-lg text-danger"></i
+                      ></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -249,38 +274,48 @@
         </div>
       </div>
     </section>
+    <!--End of task -->
 
-    <!-- Footer -->
-    <footer>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-            <div class="row border-top pt-3">
-              <div class="col-lg-6 text-center">
-                <ul class="list-inline">
-                  <li class="list-inline-item mr-2">
-                    <a href="#" class="text-dark">Umeed</a>
-                  </li>
-                  <li class="list-inline-item mr-2">
-                    <a href="#" class="text-dark">About</a>
-                  </li>
-                  <li class="list-inline-item mr-2">
-                    <a href="#" class="text-dark">Support</a>
-                  </li>
-                  <li class="list-inline-item mr-2">
-                    <a href="#" class="text-dark">Blog</a>
-                  </li>
-                </ul>
+    <!-- ADD POST MODAL -->
+    <div class="modal fade" id="addPostModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header btn-tasks text-white">
+            <h5 class="modal-title">Add Task</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" />
               </div>
-              <div class="col-lg-6 text-center">
-                <p>&copy; 2020 All Rights Reserved</p>
+              <div class="form-group">
+                <label for="category">Category</label>
+                <select class="form-control">
+                  <option value="">Coasters</option>
+                  <option value="">Paper Lamps</option>
+                  <option value="">Bookmarks</option>
+                  <option value="">Table Mats</option>
+                  <option value="">Curtains</option>
+                </select>
               </div>
-            </div>
+              <div class="form-group">
+                <label for="body">Description</label>
+                <textarea name="editor1" class="form-control"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal">
+              Save Changes
+            </button>
           </div>
         </div>
       </div>
-    </footer>
-
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -296,6 +331,11 @@
       integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+
+    <script>
+      CKEDITOR.replace("editor1");
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

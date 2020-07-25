@@ -32,25 +32,26 @@ class HomeState extends State<HomeActivity> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Umeed'),
-        ),
-        body:
-        Column(
-         children: [RaisedButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed('/tasks');
-          },
-          child: Text("tasks"),
-        ),
-        RaisedButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed('/dashboard');
-          },
-          child: Text("dash"),
-        ),
-         ]
-        )
-        );
+      appBar: AppBar(
+        title: Text('Umeed'),
+      ),
+      body:
+          // Column(
+          //  children: [RaisedButton(
+          //   onPressed: () {
+          //     Navigator.of(context).pushNamed('/tasks');
+          //   },
+          //   child: Text("tasks"),
+          // ),
+          // RaisedButton(
+          //   onPressed: () {
+          //     Navigator.of(context).pushNamed('/dashboard');
+          //   },
+          //   child: Text("dash"),
+          // ),
+          //  ]
+          // )
+          Text("test"),
+    );
   }
 }

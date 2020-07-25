@@ -7,6 +7,9 @@ import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignupPage extends StatefulWidget {
+  final Function changeAuth;
+
+  SignupPage({this.changeAuth});
   @override
   _SignupPageState createState() => _SignupPageState();
 }
@@ -23,7 +26,6 @@ class _SignupPageState extends State<SignupPage> {
   var _userPhone = '';
 
   void handleRegister() async {
-    print("akash");
     AuthResult authResult;
     _formKey.currentState.save();
     try {
@@ -31,8 +33,6 @@ class _SignupPageState extends State<SignupPage> {
         _isLoading = true;
       });
       print(emailController.text);
-      authResult = await _auth.createUserWithEmailAndPassword(
-          email: emailController.text, password: passwordController.text);
 
       print(authResult);
 
@@ -206,7 +206,7 @@ class _SignupPageState extends State<SignupPage> {
                                 borderRadius: BorderRadius.circular(20.0)),
                             child: InkWell(
                               onTap: () {
-                                Navigator.of(context).pop();
+                                widget.changeAuth();
                               },
                               child: Center(
                                 child: Text('Go Back',
