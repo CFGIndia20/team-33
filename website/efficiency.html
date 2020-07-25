@@ -33,14 +33,18 @@
                 <i class="fas fa-user text-white fa-2x mr-2"></i>
                 <a href="#" class="text-white mr-3">Manager</a>
               </div>
-
+  
               <ul class="navbar-nav flex-column mt-4">
                 <li class="nav-item">
-                  <a href="index.html" class="nav-link text-white p-3 mb-2"><i
+                  <a href="index.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
                       class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                  <a href="session.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                      class="fas fa-users text-light fa-lg mr-3"></i>Sessions</a>
+                </li>
+                <li class="nav-item">
+                  <a href="attendance.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
                       class="fas fa-users text-light fa-lg mr-3"></i>Attendance</a>
                 </li>
                 <li class="nav-item">
@@ -48,20 +52,12 @@
                       class="fas fa-tasks text-light fa-lg mr-3"></i>Tasks</a>
                 </li>
                 <li class="nav-item">
-                  <a href="compensation.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
-                      class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Wages</a>
-                </li>
-                <li class="nav-item">
                   <a href="efficiency.html" class="nav-link text-white p-3 mb-2 sidebar-link current"><i
-                      class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Efficiency</a>
+                      class="fas fa-chart-line text-light fa-lg mr-3"></i>Efficiency</a>
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link text-white p-3 mb-2 sidebar-link"><i
-                      class="fas fa-chart-line text-light fa-lg mr-3"></i>Analytics</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link text-white p-3 mb-2 sidebar-link"><i
-                      class="fas fa-chart-bar text-light fa-lg mr-3"></i>Reports</a>
+                  <a href="compensation.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                      class="fas fa-money-bill-wave text-light fa-lg mr-3"></i>Compensation</a>
                 </li>
               </ul>
             </div>
@@ -83,12 +79,7 @@
                 </div>
                 <div class="col md-3">
                   <ul class="navbar-nav">
-                    <li class="nav-item icon-parent">
-                      <a class="nav-link icon-bullet" href=""><i class="fas fa-comments text-muted fa-lg"></i></a>
-                    </li>
-                    <li class="nav-item icon-parent">
-                      <a class="nav-link icon-bullet" href=""><i class="fas fa-bell text-muted fa-lg"></i></a>
-                    </li>
+                    
                     <li class="nav-item ml-md-auto">
                       <a class="nav-link" href="#" data-toggle="modal" data-target="#sign-out"><i
                           class="fas fa-sign-out-alt text-danger fa-lg"></i></a>
@@ -180,35 +171,35 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-          <div class="row border-top pt-3">
-            <div class="col-lg-6 text-center">
-              <ul class="list-inline">
-                <li class="list-inline-item mr-2">
-                  <a href="#" class="text-dark">Umeed</a>
-                </li>
-                <li class="list-inline-item mr-2">
-                  <a href="#" class="text-dark">About</a>
-                </li>
-                <li class="list-inline-item mr-2">
-                  <a href="#" class="text-dark">Support</a>
-                </li>
-                <li class="list-inline-item mr-2">
-                  <a href="#" class="text-dark">Blog</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-6 text-center">
-              <p>&copy; 2020 All Rights Reserved</p>
+    <footer class="fixed-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark">
+            <div class="row border-top pt-3">
+              <div class="col-lg-6 text-center">
+                <ul class="list-inline">
+                  <li class="list-inline-item mr-2">
+                    <a href="#" class="text-white">Umeed</a>
+                  </li>
+                  <li class="list-inline-item mr-2">
+                    <a href="#" class="text-white">About</a>
+                  </li>
+                  <li class="list-inline-item mr-2">
+                    <a href="#" class="text-white">Support</a>
+                  </li>
+                  <li class="list-inline-item mr-2">
+                    <a href="#" class="text-white">Blog</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6 text-center">
+                <p class="text-white">&copy; 2020 All Rights Reserved</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
