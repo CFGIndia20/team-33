@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="css/style2.css" />
   <link rel="import" href="config.html" />
   <title>Admin Dashboard</title>
-  <style>
-    .main {
+  <style> 
+    .main{
       padding: 10px;
       margin-left: 15px;
     }
@@ -50,15 +50,15 @@
                       class="fas fa-users text-light fa-lg mr-3"></i>Attendance</a>
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                  <a href="tasks.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
                       class="fas fa-tasks text-light fa-lg mr-3"></i>Tasks</a>
                 </li>
                 <li class="nav-item">
-                  <a href="compensation.html" class="nav-link text-white p-3 mb-2 sidebar-link current"><i
+                  <a href="compensation.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
                       class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Wages</a>
                 </li>
                 <li class="nav-item">
-                  <a href="effiency.html" class="nav-link text-white p-3 mb-2 sidebar-link current"><i
+                  <a href="efficiency.html" class="nav-link text-white p-3 mb-2 sidebar-link current"><i
                       class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Efficiency</a>
                 </li>
                 <li class="nav-item">
@@ -75,7 +75,7 @@
             <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
               <div class="row align-items-center">
                 <div class="col-md-4">
-                  <h4 class="text-light text-uppercase mb-0">Dashboard</h4>
+                  <h4 class="text-light text-uppercase mb-0">Efficiency</h4>
                 </div>
                 <div class="col-md-5">
                   <form class="" action="index.html" method="post">
@@ -141,27 +141,30 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xl-10 col-md-8 col-lg-9 ml-auto">
-          <div class="row pt-md-5 mt-md-3 mb-5">
+          <div class="row mb-4 align-items-center">
+              <div class="col-12">
             <!-- Example single danger button -->
-            <div class="row">
-              <div class="col-lg-9 col-md-9 col-9">
-                <label for="">Select Month</label>
-                <select>
-                  <option value="june">June</option>
-                  <option value="july">July</option>
-                  <option value="August">August</option>
-                </select>
-
-              </div>
-              <div class="col-lg-3 col-md-3 col-3">
-                <div class="btn-group">
-                  <button type="button " class="button primary-button px-2 py-1">Report</button>
+           <div class="row pt-md-5 mt-md-3">
+             <div class="col-xl-9 col-lg-9 col-sm-6 p-2">
+              <label for="">Select Month</label>
+              <select class="ml-2">
+                <option value="june">June</option>
+                <option value="july">July</option>
+                <option value="August">August</option>
+              </select>
+                
+             </div>
+             <div class="col-xl-3 col-sm-6 p-2">
+              <div class="btn-group">                
+                <button type="button " class="button primary-button px-2 py-1">Report</button>
                 </div>
-              </div>
             </div>
-
+           </div>
+        </div>
+           
+          
             <table class="table table-striped mt-4">
-              <thead>
+              <thead class="current">
                 <tr>
                   <th scope="col">Srno</th>
                   <th scope="col">User</th>
@@ -182,7 +185,7 @@
                   <td>8</td>
                   <td>80%</td>
                 </tr>
-
+               
               </tbody>
             </table>
           </div>
