@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-class HomeActivity extends StatefulWidget{
+
+class Dashboard extends StatefulWidget{
   @override
-  HomeState createState() => HomeState();
+  DashboardState createState() => DashboardState();
 }
 
-class HomeState extends State<HomeActivity>{
-
+class DashboardState extends State<Dashboard>{
     Widget _container(){
       var container = Container(
             margin: const EdgeInsets.all(10.0),
@@ -15,22 +15,18 @@ class HomeState extends State<HomeActivity>{
                         color: Colors.pink[900],
                         borderRadius: BorderRadius.circular(20),
                     ),
+              
           );
         
         var cont =Container(
         color: Colors.white30,
-        child: GridView.count(
-          crossAxisCount: 2,
-          childAspectRatio: 1.0,
-          padding: const EdgeInsets.all(2.0),
-          mainAxisSpacing: 2.0,
-          crossAxisSpacing: 2.0,
+        child: Column(
           children:[
-            container,
-            container,
-            container,
-            container,
-          ]),
+          container,
+          container,
+          container,
+          ]
+        ),
         ); 
         return
         Center(child: cont);
