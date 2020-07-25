@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:team33_umeed/login.dart';
-
+import 'package:team33_umeed/screens/tasks.dart';
 import 'signup.dart';
 import 'activities/homepage.dart';
 
@@ -10,10 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
         '/signup': (BuildContext context) => new SignupPage(),
-        '/home': (BuildContext context) => new HomeActivity()
+        '/home': (BuildContext context) => new HomeActivity(),
+        '/tasks': (_) => TasksScreen(),
       },
       home: new MyHomePage(),
     );
