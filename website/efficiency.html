@@ -15,12 +15,6 @@
   <link rel="stylesheet" href="css/style2.css" />
   <link rel="import" href="config.html" />
   <title>Admin Dashboard</title>
-  <style> 
-    .main{
-      padding: 10px;
-      margin-left: 15px;
-    }
-  </style>
 </head>
 
 <body>
@@ -137,7 +131,6 @@
 
 
   <section class="main">
-
     <div class="container-fluid">
       <div class="row">
         <div class="col-xl-10 col-md-8 col-lg-9 ml-auto">
@@ -156,14 +149,14 @@
              </div>
              <div class="col-xl-3 col-sm-6 p-2">
               <div class="btn-group">                
-                <button type="button " class="button primary-button px-2 py-1">Report</button>
+                <button type="button" class="btn btn-primary getReport">Get Report</button>
                 </div>
             </div>
            </div>
         </div>
            
           
-            <table class="table table-striped mt-4">
+            <table class="table table-striped mt-4 efficiencyTable">
               <thead class="current">
                 <tr>
                   <th scope="col">Srno</th>
@@ -172,25 +165,18 @@
                   <th scope="col">Efficiency</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
+              <tbody class="efficiencyData">
+                <tr id="template" class="d-none">
                   <th scope="row">1</th>
-                  <td>Drishti</td>
-                  <td>6</td>
-                  <td>60%</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jaya</td>
-                  <td>8</td>
-                  <td>80%</td>
-                </tr>
-               
+                  <td>$name$</td>
+                  <td>$products$</td>
+                  <td>$efficiency$</td>
+                </tr>               
               </tbody>
-            </table>
+            </table>        
           </div>
         </div>
-      </div>
+      </div>    
   </section>
 
   <!-- Footer -->
@@ -236,5 +222,10 @@
     crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+<script src="../website/js/script.js"></script>
 
 </html>
