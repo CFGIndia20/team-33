@@ -112,3 +112,9 @@ a:hover {
 .task-border {
   border-left: 3px solid #f66436;
 }
+
+.table{
+  margin-top: 8%;
+  margin-left: 18%;
+  width: 80%;
+}
