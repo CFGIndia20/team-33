@@ -3,7 +3,7 @@ import 'package:team33_umeed/login.dart';
 import 'package:team33_umeed/screens/tasks.dart';
 import 'signup.dart';
 import 'activities/homepage.dart';
-
+import 'activities/dashboard.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/signup': (BuildContext context) => new SignupPage(),
         '/home': (BuildContext context) => new HomeActivity(),
+        '/dashboard':(_) => new Dashboard(),
         '/tasks': (_) => TasksScreen(),
       },
       home: new MyHomePage(),

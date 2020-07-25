@@ -35,11 +35,22 @@ class HomeState extends State<HomeActivity> {
         appBar: AppBar(
           title: Text('Umeed'),
         ),
-        body: RaisedButton(
+        body:
+        Column(
+         children: [RaisedButton(
           onPressed: () {
             Navigator.of(context).pushNamed('/tasks');
           },
           child: Text("tasks"),
-        ));
+        ),
+        RaisedButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed('/dashboard');
+          },
+          child: Text("dash"),
+        ),
+         ]
+        )
+        );
   }
 }
