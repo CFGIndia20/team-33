@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
           email: emailController.text, password: passwordController.text);
       print(authResult);
 
-      Navigator.of(context).pushReplacementNamed('/login');
+      // Navigator.of(context).pushReplacementNamed('/login');
     } on PlatformException catch (err) {
       var message = 'An error occurred, pelase check your credentials!';
 

@@ -19,12 +19,17 @@ class _UploadImageState extends State<UploadImage> {
   FirebaseStorage fireStorageInstance = FirebaseStorage.instance;
   StorageUploadTask _uploadTask;
 
-  Future getImage() async {
-    var image = await ImagePicker.pickImage(
-        source: ImageSource.gallery, imageQuality: 100);
-    setState(() {
-      _image = image;
-    });
+  Future<void> getImg() async {
+    try {
+      final pickedFile = await ImagePicker()
+          .getImage(source: ImageSource.gallery, imageQuality: 100);
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+      return;
+    } catch (err) {
+      print('Error getting image: $err');
+    }
   }
 
   Future<void> upload({@required File file, @required String taskId}) async {
@@ -70,11 +75,12 @@ class _UploadImageState extends State<UploadImage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   RaisedButton(
-                    onPressed: _image == null
-                        ? getImage
-                        : !isFileUploading && !isFileUploaded
-                            ? upload(file: _image, taskId: widget.taskId)
-                            : () {},
+                    onPressed: () async {
+                      if (_image == null) {
+                        await getImg();
+                      } else if (!isFileUploading && !isFileUploaded)
+                        await upload(file: _image, taskId: widget.taskId);
+                    },
                     child: _image == null
                         ? Text('Select Image')
                         : !isFileUploading && !isFileUploaded

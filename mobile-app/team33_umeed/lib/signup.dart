@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:team33_umeed/services/auth.dart';
 
 class SignupPage extends StatefulWidget {
   final Function changeAuth;
@@ -33,7 +34,12 @@ class _SignupPageState extends State<SignupPage> {
         _isLoading = true;
       });
       print(emailController.text);
-
+      try {
+        authResult = await AuthService()
+            .createUser(emailController.text, passwordController.text);
+      } catch (error) {
+        print(error);
+      }
       print(authResult);
 
       await Firestore.instance
