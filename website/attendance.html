@@ -42,6 +42,10 @@
                                         class="fas fa-users text-light fa-lg mr-3"></i>Sessions</a>
                             </li>
                             <li class="nav-item">
+                                <a href="attendance.html" class="nav-link text-white p-3 mb-2 sidebar-link"
+                                  ><i class="fas fa-users text-light fa-lg mr-3"></i>Attendance</a>
+                              </li>
+                            <li class="nav-item">
                                 <a href="tasks.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
                                         class="fas fa-tasks text-light fa-lg mr-3"></i>Tasks</a>
                             </li>
@@ -124,27 +128,30 @@
     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th class="th-sm">Session No.</th>
+                <th class="th-sm">#</th>
+                <th class="th-sm">Name</th>
+                <th class="th-sm">Phone</th>                
                 <th class="th-sm">Date</th>
-                <th class="th-sm">Day</th>                
-                <th class="th-sm">RVSP out of 100</th>
-                <th class="th-sm">Status</th>
+                <th class="th-sm">Present</th>
+                <th class="th-sm">Homework</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>01-06-2020</td>
-                <td>Sunday</td>
-                <td>61</td>
-                <td>Executed</td>
+                <td>ABC</td>
+                <td>1234567890</td>
+                <td>12-07-2020</td>
+                <td>Yes</td>
+                <td><input type="checkbox" checked="checked"></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>08-06-2020</td>
-                <td>Sunday</td>
-                <td>55</td>
-                <td>Cancelled</td>
+                <td>PQR</td>
+                <td>1234567890</td>
+                <td>22-08-2020</td>
+                <td>No</td>
+                <td><input type="checkbox" checked="checked"></td>
             </tr>
         </tbody>
     </table>

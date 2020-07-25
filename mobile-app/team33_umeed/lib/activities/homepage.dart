@@ -96,6 +96,7 @@ class HomeState extends State<HomeActivity> {
               //   },
               //   child: Text("tasks"),
               // ),
+
               //  RaisedButton(
               //   onPressed: () async {
               //     await AuthService().signOut();
@@ -113,21 +114,24 @@ class HomeState extends State<HomeActivity> {
                     return snapshot.data != null
                         ? ListView.builder(
                             itemBuilder: (context, index) {
-                              return ListTile(
-                                contentPadding: const EdgeInsets.all(10.0),
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                      MaterialPageRoute(builder: (context) {
-                                    return UploadImage(
-                                        taskId: snapshot.data[index].id);
-                                  }));
-                                },
-                                leading: CircleAvatar(
-                                  child: Text(snapshot.data[index].name),
+
+                              return Card(
+                                margin: EdgeInsets.symmetric(horizontal: 20.0),
+                                elevation: 1.5,
+                                child: ListTile(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (context) {
+                                      return UploadImage(
+                                          taskId: snapshot.data[index].id);
+                                    }));
+                                  },
+                                  leading: CircleAvatar(
+                                    child: Text(snapshot.data[index].name),
+                                  ),
+                                  title: Text(snapshot.data[index].description),
+                                  subtitle: Text("date"),
                                 ),
-                                title: Text(snapshot.data[index].description),
-                                subtitle: Text("date"),
-                                
                               );
                             },
                             itemCount: snapshot.data.length,
