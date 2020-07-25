@@ -17,7 +17,7 @@ class DashboardState extends State<Dashboard>{
             width: 400.0,
             height: 200.0,
             decoration: new BoxDecoration(
-                        color: Colors.pink[900],
+                        color: Colors.pink[200],
                         borderRadius: BorderRadius.circular(20),
                     ),
             child: ListView.builder(
@@ -43,7 +43,7 @@ class DashboardState extends State<Dashboard>{
             width: 400.0,
             height: 200.0,
             decoration: new BoxDecoration(
-                        color: Colors.pink[900],
+                        color: Colors.pink[200],
                         borderRadius: BorderRadius.circular(20),
                     ),
             child: ListView.builder(
@@ -69,7 +69,7 @@ class DashboardState extends State<Dashboard>{
             width: 400.0,
             height: 200.0,
             decoration: new BoxDecoration(
-                        color: Colors.pink[900],
+                        color: Colors.pink[200],
                         borderRadius: BorderRadius.circular(20),
                     ),
             child: ListView.builder(
