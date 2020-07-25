@@ -73,7 +73,7 @@ db.collection("users").get().then(function (querySnapshot) {
         let data = doc.data();
         rowData = rowData.replace("$name$", data.username);
         rowData = rowData.replace("$phone$", data.phone);
-        rowData = rowData.replace("$date$", data.date);
+        rowData = rowData.replace("$date$", data.Date);
         document.querySelector(".usersData").innerHTML = document.querySelector(".usersData").innerHTML + (rowData);
     });
 })
