@@ -6,4 +6,11 @@ class Task {
   final DateTime end;
 
   Task({this.id, this.name, this.description, this.start, this.end});
+
+  Task.fromJSON(String id, Map<dynamic, dynamic> json)
+      : id = json['id'],
+        name = json['name'],
+        description = json['description'],
+        end = json['end'],
+        start = json['start'];
 }
