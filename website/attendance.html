@@ -129,23 +129,16 @@
                 <th class="th-sm">Homework</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
+        <tbody class="usersData">
+            <tr id="template" class="d-none">
                 <td>1</td>
-                <td>ABC</td>
-                <td>1234567890</td>
-                <td>12-07-2020</td>
+                <td>$name$</td>
+                <td>$phone$</td>
+                <td>$date</td>
                 <td>Yes</td>
-                <td><input type="checkbox" checked="checked"></td>
+                <td><input type="checkbox"></td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>PQR</td>
-                <td>1234567890</td>
-                <td>22-08-2020</td>
-                <td>No</td>
-                <td><input type="checkbox" checked="checked"></td>
-            </tr>
+
         </tbody>
     </table>
 
@@ -190,15 +183,11 @@
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
-    <script src="config.js"></script>
-
-
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+    <script src="../website/js/script.js"></script>
 
 </body>
 

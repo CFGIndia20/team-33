@@ -46,4 +46,37 @@ db.collection("efficiency")
         console.log("Error getting documents: ", error);
     });
 
+db.collection("session").get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+        // doc.data() is never undefined for query doc snapshots
+        let template = document.querySelector("#template").innerHTML;
 
+        let rowData = template;
+        let data = doc.data();
+        rowData = rowData.replace("$agenda$", data.agenda);
+        rowData = rowData.replace("$date$", data.date);
+        rowData = rowData.replace("$location$", data.location);
+        rowData = rowData.replace("$time$", data.time);
+        document.querySelector(".sessionData").innerHTML = document.querySelector(".sessionData").innerHTML + (rowData);
+    });
+})
+    .catch(function (error) {
+        console.log("Error getting documents: ", error);
+    });
+
+db.collection("users").get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+        // doc.data() is never undefined for query doc snapshots
+        let template = document.querySelector("#template").innerHTML;
+
+        let rowData = template;
+        let data = doc.data();
+        rowData = rowData.replace("$name$", data.username);
+        rowData = rowData.replace("$phone$", data.phone);
+        rowData = rowData.replace("$date$", data.date);
+        document.querySelector(".usersData").innerHTML = document.querySelector(".usersData").innerHTML + (rowData);
+    });
+})
+    .catch(function (error) {
+        console.log("Error getting documents: ", error);
+    });
