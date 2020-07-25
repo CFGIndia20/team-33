@@ -183,42 +183,27 @@
       </div>
     </div>
 
-    <!----->
-    <table
-      id="dtBasicExample"
-      class="table table-striped table-bordered table-sm"
-      cellspacing="0"
-      width="100%"
-      style="margin-left: 18%;"
-    >
-      <thead>
-        <tr>
-          <th class="th-sm">Session No.</th>
-          <th class="th-sm">Agenda</th>
-          <th class="th-sm">Date</th>
-          <th class="th-sm">Location</th>
-          <th class="th-sm">Time</th>
-          <th class="th-sm">Users</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Learn Handicraft</td>
-          <td>01-06-2020</td>
-          <td>Bhiwandi</td>
-          <td>12:12:12</td>
-          <td>Akash</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Acha Bura</td>
-          <td>02-08-2020</td>
-          <td>Patiala</td>
-          <td>10:10:10</td>
-          <td>Rishabh</td>
-        </tr>
-      </tbody>
+    <!--Table--->
+    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%"
+        style="margin-left: 18%;">
+        <thead>
+            <tr>
+                <th class="th-sm">Agenda</th>
+                <th class="th-sm">Date</th>
+                <th class="th-sm">Location</th>
+                <th class="th-sm">Time</th>
+                <th class="th-sm">Users</th>
+            </tr>
+        </thead>
+        <tbody class="sessionData">
+            <tr id="template" class="d-none">    
+                <td>$agenda$</td>
+                <td>$date$</td>
+                <td>$location$</td>
+                <td>$time$</td>
+                <td>Akash</td>
+            </tr>
+        </tbody>
     </table>
 
     <!-- Footer -->
@@ -268,12 +253,13 @@
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
-    <script src="config.js"></script>
-  </body>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+    <script src="../website/js/script.js"></script>
+
+
+</body>
+
 </html>
