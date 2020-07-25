@@ -188,9 +188,45 @@
                
               </tbody>
             </table>
+
+        
+            <table class="table_effency table-striped">
+                  <thead class="thead-default">
+                      <tr>
+                          <th>User</th>
+                          <th>Num of products</th>
+                          <th>Month</th>
+                          <th>Effency</th>
+                      </tr>
+                  </thead>
+                  <tbody class="efficiencyData">
+                      <tr id="template" style="display: none">
+                          <td class="text-xs-center">
+                              $name$
+                          </td>
+                  
+                          <td class="text-xs-center">
+                              $products$ 
+                          </td>
+                     
+                          <td class="text-xs-center">
+                              $month$
+                          </td>
+                      
+                          <td class="text-xs-center">
+                              $efficiency$
+                          </td>
+                      </tr>
+                  </tbody>
+                </table>
           </div>
         </div>
+
+        
       </div>
+
+
+      
   </section>
 
   <!-- Footer -->
@@ -236,5 +272,10 @@
     crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+<script src="../website/js/script.js"></script>
 
 </html>
