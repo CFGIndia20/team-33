@@ -46,14 +46,14 @@ class HomeState extends State<HomeActivity> {
         ),
         appBar: AppBar(
           title: Text('Umeed'),
-          // actions: <Widget>[
-          //   IconButton(
-          //     icon: Icon(Icons.exit_to_app),
-          //     onPressed: () async {
-          //       await AuthService().signOut();
-          //     },
-          //   )
-          // ],
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.exit_to_app),
+              onPressed: () async {
+                await AuthService().signOut();
+              },
+            )
+          ],
           elevation: 0,
         ),
         drawer: Drawer(
@@ -85,11 +85,11 @@ class HomeState extends State<HomeActivity> {
               ListTile(
                 leading: Icon(Icons.account_circle),
                 title: Text('Account'),
-                onTap: () async {
-                  await AuthService().signOut();
+                onTap: () {
                   // Update the state of the app
                   // ...
                   // Then close the drawer
+                  Navigator.of(context).pushReplacementNamed('/login');
                 },
               ),
               ListTile(
@@ -212,23 +212,27 @@ class HomeState extends State<HomeActivity> {
                                     const EdgeInsets.symmetric(horizontal: 25),
                                 //margin: EdgeInsets.symmetric(horizontal: 20.0),
                                 elevation: 1.5,
-                                child: ListTile(
-                                  onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(builder: (context) {
-                                      return UploadImage(
-                                          taskId: snapshot.data[index].id);
-                                    }));
-                                  },
-                                  leading: CircleAvatar(
-                                    backgroundColor: Colors.purple[500],
-                                    foregroundColor: Colors.white,
-                                    child: Text("#1"),
-                                  ),
-                                  title: Text(snapshot.data[index].description),
-                                  subtitle: Text("date"),
-                                  trailing: Icon(
-                                    Icons.arrow_forward,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: ListTile(
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(builder: (context) {
+                                        return UploadImage(
+                                            taskId: snapshot.data[index].id);
+                                      }));
+                                    },
+                                    leading: CircleAvatar(
+                                      backgroundColor: Colors.purple[500],
+                                      foregroundColor: Colors.white,
+                                      child: Text("#1"),
+                                    ),
+                                    title:
+                                        Text(snapshot.data[index].description),
+                                    subtitle: Text("date"),
+                                    trailing: Icon(
+                                      Icons.arrow_forward,
+                                    ),
                                   ),
                                 ),
                               );
