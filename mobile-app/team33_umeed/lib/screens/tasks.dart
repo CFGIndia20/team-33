@@ -5,8 +5,25 @@ class TasksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: null,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tasks'),
+      ),
+      body: Container(
+        height: 600,
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: CircleAvatar(
+                child: Text("1"),
+              ),
+              title: Text("task"),
+              subtitle: Text("date"),
+            );
+          },
+          itemCount: 10,
+        ),
+      ),
     );
   }
 }
