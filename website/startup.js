@@ -9,11 +9,20 @@ app.get('/', function(req, res)
 app.post('/signup', function(req, res)
 {
     console.log("Success signup");
+    const Joi = require('joi');
+    const data = req.body;
+    const schema = Joi.object().keys({
+        const email = Joi.string().email().lowercase().required();
+        const password = Joi.string().min(7).alphanum().required();
     res.sendFile('/index.html');
 });
-app.post('/login', function(req, res)
+app.post('/login', function(req, res, next)=>
 {
     console.log("Success login");
+    const Joi = require('joi');
+    const data = req.body;
+    const schema = Joi.object().keys({
+        email: Joi.string().email().required();
     res.sendFile('/index.html');
 });
    
