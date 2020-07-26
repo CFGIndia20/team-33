@@ -24,11 +24,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/tasks.js"></script>
     <title>Admin Dashboard</title>
   </head>
 
-  <body onload=tasks()>
+  <body>
     <nav class="navbar navbar-expand-sm navbar-light">
       <button
         class="navbar-toggler ml-auto mb-2 bg-light"
@@ -42,63 +41,36 @@
           <div class="row">
             <!-- Sidebar -->
             <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
-              <a
-                class="navbar-brand text-white d-block mx-auto py-3 text-center bottom-border mb-4"
-                href="#"
-                >Umeed</a
-              >
+              <a class="navbar-brand text-white d-block mx-auto py-3 text-center bottom-border mb-4" href="#">Umeed</a>
               <div class="border-bottom py-3">
                 <i class="fas fa-user text-white fa-2x mr-2"></i>
                 <a href="#" class="text-white mr-3">Manager</a>
               </div>
-
+  
               <ul class="navbar-nav flex-column mt-4">
                 <li class="nav-item">
-                  <a
-                    href="index.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                    ><i class="fas fa-home text-light fa-lg mr-3"></i
-                    >Dashboard</a
-                  >
+                  <a href="index.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                      class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a
-                    href="session.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                    ><i class="fas fa-users text-light fa-lg mr-3"></i
-                    >Sessions</a
-                  >
+                  <a href="session.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                      class="fas fa-users text-light fa-lg mr-3"></i>Sessions</a>
                 </li>
                 <li class="nav-item">
-                  <a
-                    href="attendance.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                    ><i class="fas fa-users text-light fa-lg mr-3"></i
-                    >Attendance</a
-                  >
+                  <a href="attendance.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                      class="fas fa-users text-light fa-lg mr-3"></i>Attendance</a>
                 </li>
                 <li class="nav-item">
-                  <a
-                    href="tasks.html"
-                    class="nav-link text-white p-3 mb-2 current"
-                    ><i class="fas fa-tasks text-light fa-lg mr-3"></i>Tasks</a
-                  >
+                  <a href="tasks.html" class="nav-link text-white p-3 mb-2 current"><i
+                      class="fas fa-tasks text-light fa-lg mr-3"></i>Tasks</a>
                 </li>
                 <li class="nav-item">
-                  <a
-                    href="efficiency.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                    ><i class="fas fa-chart-line text-light fa-lg mr-3"></i
-                    >Efficiency</a
-                  >
+                  <a href="efficiency.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                      class="fas fa-chart-line text-light fa-lg mr-3"></i>Efficiency</a>
                 </li>
                 <li class="nav-item">
-                  <a
-                    href="compensation.html"
-                    class="nav-link text-white p-3 mb-2 sidebar-link"
-                    ><i class="fas fa-money-bill-wave text-light fa-lg mr-3"></i
-                    >Compensation</a
-                  >
+                  <a href="compensation.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                      class="fas fa-money-bill-wave text-light fa-lg mr-3"></i>Compensation</a>
                 </li>
               </ul>
             </div>
@@ -161,13 +133,12 @@
                     <i class="fas fa-plus"></i> Add Task
                   </a>
                 </div>
-
                 <div class="container-fluid bg-white">
                   <div class="row py-3 mb-4 task-border">
                     <div class="col-1">
                       <input type="checkbox" name="" value="" />
                     </div>
-                    <div class="col-sm-9 col-8" name="taskname">
+                    <div class="col-sm-9 col-8">
                       Task 1
                     </div>
                     <div class="col-1">
@@ -186,31 +157,75 @@
                     </div>
                   </div>
                 </div>
-                
-
-                <div id="panel">
-                  <div class="container-fluid bg-white">
-                    <div class="row py-3 mb-4 task-border">
-                      <div class="col-1">
-                        <input type="checkbox" name="" value="" />
-                      </div>
-                      <div class="col-sm-9 col-8">
-                        Task 5
-                      </div>
-                      <div class="col-1">
-                        <span data-toggle="modal" data-target="#editModal1">
-                          <a href="#" data-toggle="tooltip" title="Edit"
-                            ><i class="fas fa-edit fa-lg text-success mr-2"></i
-                          ></a>
-                        </span>
-                      </div>
-                      <div class="col-1">
-                        <span data-toggle="modal" data-target="#leave">
-                          <a href="#" data-toggle="tooltip" title="Delete"
-                            ><i class="fas fa-trash-alt fa-lg text-danger"></i
-                          ></a>
-                        </span>
-                      </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border">
+                    <div class="col-1">
+                      <input type="checkbox" name="" value="" />
+                    </div>
+                    <div class="col-sm-9 col-8">
+                      Task 2
+                    </div>
+                    <div class="col-1">
+                      <span data-toggle="modal" data-target="#editModal2">
+                        <a href="#" data-toggle="tooltip" title="Edit"
+                          ><i class="fas fa-edit fa-lg text-success mr-2"></i
+                        ></a>
+                      </span>
+                    </div>
+                    <div class="col-1">
+                      <span data-toggle="modal" data-target="#leave">
+                        <a href="#" data-toggle="tooltip" title="Delete"
+                          ><i class="fas fa-trash-alt fa-lg text-danger"></i
+                        ></a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border">
+                    <div class="col-1">
+                      <input type="checkbox" name="" value="" />
+                    </div>
+                    <div class="col-sm-9 col-8">
+                      Task 3
+                    </div>
+                    <div class="col-1">
+                      <span data-toggle="modal" data-target="#editModal1">
+                        <a href="#" data-toggle="tooltip" title="Edit"
+                          ><i class="fas fa-edit fa-lg text-success mr-2"></i
+                        ></a>
+                      </span>
+                    </div>
+                    <div class="col-1">
+                      <span data-toggle="modal" data-target="#leave">
+                        <a href="#" data-toggle="tooltip" title="Delete"
+                          ><i class="fas fa-trash-alt fa-lg text-danger"></i
+                        ></a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid bg-white">
+                  <div class="row py-3 mb-4 task-border">
+                    <div class="col-1">
+                      <input type="checkbox" name="" value="" />
+                    </div>
+                    <div class="col-sm-9 col-8">
+                      Task 4
+                    </div>
+                    <div class="col-1">
+                      <span data-toggle="modal" data-target="#editModal1">
+                        <a href="#" data-toggle="tooltip" title="Edit"
+                          ><i class="fas fa-edit fa-lg text-success mr-2"></i
+                        ></a>
+                      </span>
+                    </div>
+                    <div class="col-1">
+                      <span data-toggle="modal" data-target="#leave">
+                        <a href="#" data-toggle="tooltip" title="Delete"
+                          ><i class="fas fa-trash-alt fa-lg text-danger"></i
+                        ></a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -276,38 +291,44 @@
             <form>
               <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" name="title" />
+                <input type="text" class="form-control title" />
               </div>
               <div class="form-group">
-                <label for="category">Category</label>
-                <select class="form-control">
-                  <option value="">Coasters</option>
-                  <option value="">Paper Lamps</option>
-                  <option value="">Bookmarks</option>
-                  <option value="">Table Mats</option>
-                  <option value="">Curtains</option>
+                <label for="category">Select Product</label>
+                <select class="form-control product">
+                  <option value="Coasters">Coasters</option>
+                  <option value="Pamper Lamps">Paper Lamps</option>
+                  <option value="Bookmarks">Bookmarks</option>
+                  <option value="Table Mats">Table Mats</option>
+                  <option value="Curtains">Curtains</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="number" value="" class="form-control" />
+                <label for="Users">Select User</label>
+                <select class="form-control user">
+                  
+                </select>
               </div>
               <div class="form-group">
                 <label for="body">Description</label>
-                <textarea name="editor1" class="form-control"></textarea>
+                <textarea name="editor1" class="form-control description"></textarea>
               </div>
               <div class="form-group">
-                <label for="deadline">Deadline</label>
-                <input type="date" value="" class="form-control" />
+                <label for="body">Quantity</label>
+                <input type="number" name="editor1" class="form-control quantity"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="body">Assigned Date - </label>
+                <label for="body" class="assignedDate"></label>
+              </div>
+              <div class="form-group">
+                <label for="body">Deadline - </label>
+                <label for="body" class="deadline"></label>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button
-              class="btn btn-primary"
-              data-dismiss="modal"
-              onclick="myFunction()"
-            >
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
               Save Changes
             </button>
           </div>
@@ -341,16 +362,8 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="number" value="" class="form-control" />
-              </div>
-              <div class="form-group">
                 <label for="body">Description</label>
                 <textarea name="editor1" class="form-control"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="deadline">Deadline</label>
-                <input type="date" value="" class="form-control" />
               </div>
             </form>
           </div>
@@ -389,16 +402,8 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="number" value="" class="form-control" />
-              </div>
-              <div class="form-group">
                 <label for="body">Description</label>
                 <textarea name="editor1" class="form-control"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="deadline">Deadline</label>
-                <input type="date" value="" class="form-control" />
               </div>
             </form>
           </div>
@@ -485,7 +490,6 @@
               name="button"
               class="btn btn-danger"
               data-dismiss="modal"
-              onclick="newFunction()"
             >
               Delete
             </button>
@@ -541,15 +545,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
-    <script src="script.js"></script>
-    <script>
+    <script src="script.js">
       CKEDITOR.replace("editor1");
-      function myFunction() {
-        document.getElementById("panel").style.display = "block";
-      }
-      function newFunction() {
-        document.getElementById("panel").style.display = "none";
-      }
     </script>
   </body>
 </html>
