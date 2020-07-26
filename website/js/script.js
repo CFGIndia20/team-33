@@ -23,23 +23,28 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
 
-db.collection("efficiency")
-    .where("month", "==", "july")
+db.collection("tasks")
     .get()
     .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
             // doc.data() is never undefined for query doc snapshots
-            let template = document.querySelector("#template").innerHTML;
-            console.log("hello");
-            console.log(doc.id, " => ", doc.data());
+            let startDate = new Date();
+            startDate.setDate(1);
+            let endDate = new Date();
+            endDate.setDate(1); endDate.setMonth(endDate.getMonth() + 1); endDate.setDate(-1);
 
+            let template = document.querySelector("#template").innerHTML;
             let rowData = template;
             let data = doc.data();
-            rowData = rowData.replace("$name$", data.user);
-            rowData = rowData.replace("$products$", data.no_of_products);
-            rowData = rowData.replace("$month$", data.month);
-            rowData = rowData.replace("$efficiency$", data.efficiency);
-            document.querySelector(".efficiencyData").innerHTML = document.querySelector(".efficiencyData").innerHTML + (rowData);
+            let recordDate = new Date(data.deadline_date);
+            if (recordDate >= startDate && recordDate <= endDate) {
+                rowData = rowData.replace("$name$", data.username);
+                rowData = rowData.replace("$task$", data.name);
+                rowData = rowData.replace("$product$", data.product);
+                rowData = rowData.replace("$cquantity$", data.completed_quantity);
+                rowData = rowData.replace("$efficiency$", "test");
+                document.querySelector(".efficiencyData").innerHTML = document.querySelector(".efficiencyData").innerHTML + (rowData);
+            }
         });
     })
     .catch(function (error) {
@@ -82,18 +87,17 @@ db.collection("users").get().then(function (querySnapshot) {
     });
 
 db.collection("admin-login").get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-            // doc.data() is never undefined for query doc snapshots
-            let template = document.querySelector("#template").innerHTML;
-    
-            let rowData = template;
-            let data = doc.data();
-            rowData = rowData.replace("$username$", data.username);
-            rowData = rowData.replace("$password$", data.password);
-            document.querySelector(".loginData").innerHTML = document.querySelector(".loginData").innerHTML + (rowData);
-        });
-    })
-        .catch(function (error) {
-            console.log("Error getting documents: ", error);
-        });
-    
+    querySnapshot.forEach(function (doc) {
+        // doc.data() is never undefined for query doc snapshots
+        let template = document.querySelector("#template").innerHTML;
+
+        let rowData = template;
+        let data = doc.data();
+        rowData = rowData.replace("$username$", data.username);
+        rowData = rowData.replace("$password$", data.password);
+        document.querySelector(".loginData").innerHTML = document.querySelector(".loginData").innerHTML + (rowData);
+    });
+})
+    .catch(function (error) {
+        console.log("Error getting documents: ", error);
+    });
