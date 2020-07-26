@@ -6,6 +6,9 @@ import 'package:provider/provider.dart';
 import 'package:team33_umeed/models/user.dart';
 import 'package:team33_umeed/models/task.dart';
 import 'package:team33_umeed/upload.dart';
+import 'package:team33_umeed/models/language.dart';
+import 'package:team33_umeed/main.dart';
+import 'package:team33_umeed/localization/localization.dart';
 
 class HomeActivity extends StatefulWidget {
   @override
@@ -13,6 +16,28 @@ class HomeActivity extends StatefulWidget {
 }
 
 class HomeState extends State<HomeActivity> {
+  void _changeLanguage(Language language) {
+    Locale _temp;
+    switch (language.languageCode) {
+      case "en":
+        _temp = Locale(language.languageCode, "US");
+        break;
+      case "hi":
+        _temp = Locale(language.languageCode, "IN");
+        break;
+      // case "fa":
+      //   _temp = Locale(language.languageCode, "IR");
+      //   break;
+      // case "ar":
+      //   _temp = Locale(language.languageCode, "SA");
+      //   break;
+      default:
+        _temp = Locale(language.languageCode, "US");
+    }
+    MyApp.setLocale(context, _temp);
+    print(language.languageCode);
+  }
+
   Widget build(BuildContext context) {
     AuthUser authUser = Provider.of<AuthUser>(context);
     print(authUser.uId);
@@ -22,8 +47,35 @@ class HomeState extends State<HomeActivity> {
           child: Icon(Icons.add),
         ),
         appBar: AppBar(
-          title: Text('Umeed'),
+          title:
+              Text(DemoLocalization.of(context).getTranslatedValues('umeed')),
           actions: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DropdownButton(
+                icon: Icon(
+                  Icons.language,
+                  color: Colors.white,
+                ),
+                items: Language.languagesList()
+                    .map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(
+                          value: lang,
+                          child: Row(
+                            children: <Widget>[
+                              Text(lang.flag),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(lang.name),
+                            ],
+                          ),
+                        ))
+                    .toList(),
+                onChanged: (language) {
+                  _changeLanguage(language);
+                },
+              ),
+            ),
             IconButton(
               icon: Icon(Icons.exit_to_app),
               onPressed: () async {
@@ -49,8 +101,8 @@ class HomeState extends State<HomeActivity> {
                   ),
                   // backgroundImage: AssetImage('assets/lady.jpg'),
                 ),
-                accountName: Text("Akash Jindal"),
-                accountEmail: Text("akashjindal347@gmail.com"),
+                accountName: Text("GI Joe"),
+                accountEmail: Text("gijoe@gmail.com"),
               ),
               // DrawerHeader(
 
@@ -61,7 +113,8 @@ class HomeState extends State<HomeActivity> {
               // ),
               ListTile(
                 leading: Icon(Icons.account_circle),
-                title: Text('Account'),
+                title: Text(DemoLocalization.of(context)
+                    .getTranslatedValues('account')),
                 onTap: () {
                   // Update the state of the app
                   // ...
@@ -71,7 +124,8 @@ class HomeState extends State<HomeActivity> {
               ),
               ListTile(
                 leading: Icon(Icons.settings),
-                title: Text('Settings'),
+                title: Text(DemoLocalization.of(context)
+                    .getTranslatedValues('settings')),
                 onTap: () {
                   // Update the state of the app
                   // ...
@@ -81,7 +135,8 @@ class HomeState extends State<HomeActivity> {
               ),
               ListTile(
                 leading: Icon(Icons.exit_to_app),
-                title: Text('Log Out'),
+                title: Text(
+                    DemoLocalization.of(context).getTranslatedValues('logout')),
                 onTap: () {
                   // Update the state of the app
                   // ...
