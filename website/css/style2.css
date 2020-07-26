@@ -6,11 +6,11 @@
 .efficiencyTable thead{
   color: white;
 }
-.getReport{
+.getReport, .addTaskBtn{
   background: #b00574;
   border-color:#b00574; 
 }
-.getReport:hover{
+.getReport:hover, .addTaskBtn:hover{
   background: #e33da9;
   border-color: #e33da9;
 }
