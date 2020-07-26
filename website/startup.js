@@ -25,7 +25,15 @@ app.post('/login', function(req, res, next)=>
         email: Joi.string().email().required();
     res.sendFile('/index.html');
 });
-   
+
+ app.post('/logout', function(req, res)=>
+ {
+          console.log("Logout successfull");
+          app.set('views', './views') // specify the views directory
+          app.set('view engine', 'pug')
+          res.render('logout.pug');
+});
+    
 const firebaseConfig = {
     apiKey: "",
     authDomain: "team33-app.firebaseapp.com",
