@@ -6,11 +6,34 @@ app.get('/', function(req, res)
     res.sendFile('/signup.html');
 
 });
-app.post('/', function(req, res)
+app.post('/signup', function(req, res)
 {
     console.log("Success signup");
+    const Joi = require('joi');
+    const data = req.body;
+    const schema = Joi.object().keys({
+        const email = Joi.string().email().lowercase().required();
+        const password = Joi.string().min(7).alphanum().required();
     res.sendFile('/index.html');
 });
+app.post('/login', function(req, res, next)=>
+{
+    console.log("Success login");
+    const Joi = require('joi');
+    const data = req.body;
+    const schema = Joi.object().keys({
+        email: Joi.string().email().required();
+    res.sendFile('/index.html');
+});
+
+ app.post('/logout', function(req, res)=>
+ {
+          console.log("Logout successfull");
+          app.set('views', './views') // specify the views directory
+          app.set('view engine', 'pug')
+          res.render('logout.pug');
+});
+    
 const firebaseConfig = {
     apiKey: "",
     authDomain: "team33-app.firebaseapp.com",

@@ -41,6 +41,7 @@ db.collection("tasks")
                 rowData = rowData.replace("$name$", data.username);
                 rowData = rowData.replace("$task$", data.name);
                 rowData = rowData.replace("$product$", data.product);
+                rowData = rowData.replace("$aquantity$", data.quantity);
                 rowData = rowData.replace("$cquantity$", data.completed_quantity);
                 let eff = (data.completed_quantity / data.quantity) * 100;
                 rowData = rowData.replace("$efficiency$", eff);

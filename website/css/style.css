@@ -136,3 +136,7 @@ a:hover {
 #panel {
   display: none;
 }
+
+.logoimg{
+  width: 100px;
+}
