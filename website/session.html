@@ -183,28 +183,103 @@
       </div>
     </div>
 
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+            <div class="row align-items-center">
+              <div class="col-12">
+                <h4 class="p-3 text-muted">Tasks</h4>
+                <div class="yo">
+                  <a
+                    href="#"
+                    class="btn btn-tasks text-white btn-block"
+                    data-toggle="modal"
+                    data-target="#addSessionModal"
+                  >
+                    <i class="fas fa-plus"></i> Add Session
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!--Table--->
-    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%"
-        style="margin-left: 18%;">
-        <thead>
-            <tr>
-                <th class="th-sm">Agenda</th>
-                <th class="th-sm">Date</th>
-                <th class="th-sm">Location</th>
-                <th class="th-sm">Time</th>
-                <th class="th-sm">Users</th>
-            </tr>
-        </thead>
-        <tbody class="sessionData">
-            <tr id="template" class="d-none">    
-                <td>$agenda$</td>
-                <td>$date$</td>
-                <td>$location$</td>
-                <td>$time$</td>
-                <td>Akash</td>
-            </tr>
-        </tbody>
+    <table
+      id="dtBasicExample"
+      class="table table-striped table-bordered table-sm table-yo"
+      cellspacing="0"
+      width="100%"
+      style="margin-left: 18%;"
+    >
+      <thead>
+        <tr>
+          <th class="th-sm">Agenda</th>
+          <th class="th-sm">Date</th>
+          <th class="th-sm">Location</th>
+          <th class="th-sm">Time</th>
+          <th class="th-sm">Users</th>
+        </tr>
+      </thead>
+      <tbody class="sessionData">
+        <tr id="template" class="d-none">
+          <td>$agenda$</td>
+          <td>$date$</td>
+          <td>$location$</td>
+          <td>$time$</td>
+          <td>Akash</td>
+        </tr>
+      </tbody>
     </table>
+
+    <!-- ADD Session Modal -->
+    <div class="modal fade" id="addSessionModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header btn-tasks text-white">
+            <h5 class="modal-title">Add Task</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="title">Agenda</label>
+                <input type="text" class="form-control title" />
+              </div>
+              <div class="form-group">
+                <label for="body">User</label>
+                <input type="text" name="editor1" class="form-control quantity" />
+              </div>
+              <div class="form-group">
+                <label for="body">Time</label>
+                <input
+                  type="text"
+                  name="editor1"
+                  class="form-control quantity"
+                />
+              </div>
+              <div class="form-group">
+                <label for="body">Date</label>
+                <input type="text" name="editor1" class="form-control quantity" />
+              </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary addTaskBtn"
+              data-dismiss="modal"
+              onclick="addTask()"
+            >
+              Save Changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="fixed-bottom">
@@ -258,8 +333,5 @@
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
     <script src="../website/js/script.js"></script>
-
-
-</body>
-
+  </body>
 </html>

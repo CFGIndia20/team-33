@@ -129,6 +129,10 @@ a:hover {
   width: 80%;
 }
 
+.table-yo {
+  margin-top: 2%;
+}
+
 #panel {
   display: none;
 }
