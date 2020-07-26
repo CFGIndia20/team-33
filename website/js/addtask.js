@@ -36,3 +36,24 @@ $(document).ready(function () {
     $(".deadline").html((deadline.getMonth() + 1) + "/" + deadline.getDate() + "/" + deadline.getFullYear());;
 });
 
+function addTask() {
+    var userSelect = document.querySelector(".user");
+    var userName = userSelect.options[userSelect.selectedIndex].text;
+    db.collection("tasks").doc().set({
+        name: document.querySelector(".title").value,
+        product: document.querySelector(".product").value,
+        user: userSelect.value,
+        description: document.querySelector(".description").value,
+        username: userName,
+        quantity: document.querySelector(".quantity").value,
+        assigned_date: document.querySelector(".assignedDate").innerHTML,
+        deadline_date: document.querySelector(".deadline").innerHTML,
+        completed_quantity: 0
+    })
+        .then(function () {
+            console.log("Task successfully written!");
+        })
+        .catch(function (error) {
+            console.error("Error writing document: ", error);
+        });
+}
