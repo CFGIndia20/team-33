@@ -21,7 +21,7 @@
         <div class="signup">Sign Up</div>
         <div class="login">Log In</div>
         <div class="signup-form shadow">
-            <form onsubmit="return validateForm()" action="signuplogin.php" name="myForm" method="POST">
+            <form onsubmit="return validateForm()" action="/signup" name="myForm" method="POST">
                 <div class="first_box">
                     <input type="text" placeholder="Your Email Address" name="email" id="email" class="input" value=""
                         required><br />
@@ -47,7 +47,7 @@
 
             </form>
 
-            <form action="registration.php" method="POST">
+            <form action="/login" method="POST">
                 <div class="second_box mt-2">
                     <input type="text" name="votp" placeholder="Enter OTP" class="input" required><br />
                 </div>
@@ -58,7 +58,7 @@
         </div>
 
         <div class="login-form shadow">
-            <form action="index.html" method="POST" onsubmit="myFunction()">
+            <form action="/login" method="POST" onsubmit="myFunction()">
                 <input type="text" placeholder="Email or Username" name="user" id="lu" class="input" required><br />
                 <input type="password" placeholder="Password" name="password" id="lp" class="input" required><br />
                 <input type="submit" class="btnn" value="log in">
