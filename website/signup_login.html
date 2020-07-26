@@ -58,7 +58,7 @@
         </div>
 
         <div class="login-form shadow">
-            <form action="validation.php" method="POST">
+            <form action="index.html" method="POST" onsubmit="myFunction()">
                 <input type="text" placeholder="Email or Username" name="user" id="lu" class="input" required><br />
                 <input type="password" placeholder="Password" name="password" id="lp" class="input" required><br />
                 <input type="submit" class="btnn" value="log in">
@@ -141,11 +141,10 @@
         } 
     </script>
 
-    <style>
-        /* #msg{display:none;} */
-    </style>
-
-
+<script>
+    function myFunction() {
+      alert("Successful")
+    }
+    </script>
 </body>
-
 </html>

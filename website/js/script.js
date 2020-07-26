@@ -80,3 +80,20 @@ db.collection("users").get().then(function (querySnapshot) {
     .catch(function (error) {
         console.log("Error getting documents: ", error);
     });
+
+db.collection("admin-login").get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+            // doc.data() is never undefined for query doc snapshots
+            let template = document.querySelector("#template").innerHTML;
+    
+            let rowData = template;
+            let data = doc.data();
+            rowData = rowData.replace("$username$", data.username);
+            rowData = rowData.replace("$password$", data.password);
+            document.querySelector(".loginData").innerHTML = document.querySelector(".loginData").innerHTML + (rowData);
+        });
+    })
+        .catch(function (error) {
+            console.log("Error getting documents: ", error);
+        });
+    
