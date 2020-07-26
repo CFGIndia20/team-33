@@ -3,7 +3,7 @@
   padding: 10px;
   margin-left: 15px;
 }
-.efficiencyTable thead{
+.efficiencyTable thead,.taskTable thead{
   color: white;
 }
 .getReport, .addTaskBtn{
@@ -19,6 +19,6 @@
   width: 100px;
 }
 
-.efficiencyTable{
+.efficiencyTable,.taskTable{
   width:98%!important;
 }

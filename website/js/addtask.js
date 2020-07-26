@@ -57,3 +57,24 @@ function addTask() {
             console.error("Error writing document: ", error);
         });
 }
+
+db.collection("tasks")
+    .get()
+    .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+            let template = document.querySelector("#tasktemplate").innerHTML;
+            let rowData = template;
+            let data = doc.data();
+
+            rowData = rowData.replace("$user$", data.username);
+            rowData = rowData.replace("$task$", data.name);
+            rowData = rowData.replace("$product$", data.product);
+            rowData = rowData.replace("$quantity$", data.quantity);
+            rowData = rowData.replace("$assignedate$", data.assigned_date);
+            rowData = rowData.replace("$deadline$", data.deadline_date);
+            document.querySelector(".taskData").innerHTML = document.querySelector(".taskData").innerHTML + (rowData);
+        });
+    })
+    .catch(function (error) {
+        console.log("Error getting documents: ", error);
+    });

@@ -134,7 +134,7 @@
                     <i class="fas fa-plus"></i> Add Task
                   </a>
                 </div>
-                <div class="container-fluid bg-white">
+                <!-- <div class="container-fluid bg-white">
                   <div class="row py-3 mb-4 task-border">
                     <div class="col-1">
                       <input type="checkbox" name="" value="" />
@@ -229,7 +229,31 @@
                       </span>
                     </div>
                   </div>
-                </div>
+                </div> -->
+
+                <table class="table table-striped mt-4 taskTable">
+                  <thead class="current">
+                    <tr>
+                      <th scope="col">Task</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">User</th>
+                      <th scope="col">Quantity Assigned</th>
+                      <th scope="col">Assigned Date</th>
+                      <th scope="col">Deadline</th>
+                    </tr>
+                  </thead>
+                  <tbody class="taskData">
+                    <tr id="tasktemplate" class="d-none">
+                      <td scope="row">$task$</td>
+                      <td>$product$</td>
+                      <td>$user$</td>
+                      <td>$quantity$</td>
+                      <td>$assignedate$</td>
+                      <td>$deadline$</td>
+                    </tr>               
+                  </tbody>
+                </table>
+
               </div>
             </div>
           </div>
