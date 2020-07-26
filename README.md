@@ -32,7 +32,8 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ```
-flutter run //for running the application
+flutter run 
+//for running the application
 ```
 
 # Web Application (Umeed Team)
