@@ -6,11 +6,17 @@ app.get('/', function(req, res)
     res.sendFile('/signup.html');
 
 });
-app.post('/', function(req, res)
+app.post('/signup', function(req, res)
 {
     console.log("Success signup");
     res.sendFile('/index.html');
 });
+app.post('/login', function(req, res)
+{
+    console.log("Success login");
+    res.sendFile('/index.html');
+});
+   
 const firebaseConfig = {
     apiKey: "",
     authDomain: "team33-app.firebaseapp.com",
