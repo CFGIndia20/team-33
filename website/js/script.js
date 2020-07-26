@@ -42,7 +42,8 @@ db.collection("tasks")
                 rowData = rowData.replace("$task$", data.name);
                 rowData = rowData.replace("$product$", data.product);
                 rowData = rowData.replace("$cquantity$", data.completed_quantity);
-                rowData = rowData.replace("$efficiency$", "test");
+                let eff = (data.completed_quantity / data.quantity) * 100;
+                rowData = rowData.replace("$efficiency$", eff);
                 document.querySelector(".efficiencyData").innerHTML = document.querySelector(".efficiencyData").innerHTML + (rowData);
             }
         });
